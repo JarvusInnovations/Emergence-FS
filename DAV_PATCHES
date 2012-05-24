@@ -1,0 +1,21 @@
+------------------------------------------
+append to jsDAV/lib/DAV/server.js:
+
+exports.create = function(options) {
+	return new Server(options);
+};
+
+
+------------------------------------------
+append to jsDAV/lib/jsdav.js:
+
+exports.create = function(options) {
+    var DAV = require("./DAV/server");
+    DAV.debugMode = exports.debugMode;
+    return DAV.create(options);
+};
+
+
+
+
+
